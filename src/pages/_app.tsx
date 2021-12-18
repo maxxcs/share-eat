@@ -10,6 +10,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <div className="f-col ctr">
       <Header displayBg={true} />
+      <Component {...pageProps} />
       <Footer />
     </div>
   );
