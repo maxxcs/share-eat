@@ -1,4 +1,9 @@
+.container {
+  margin-bottom: 16px;
+}
+
 .container > span {
+  margin-bottom: 4px;
   font: normal normal bold 14px/19px Nunito Sans;
   color: #ffffffde;
 }

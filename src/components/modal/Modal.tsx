@@ -29,8 +29,9 @@ function Modal() {
           <Input name="Valor" placeholder="0,00" />
           <Textarea
             name="Descrição do prato"
-            obs="A descrição deve conter até 200 caracteres"
             placeholder="Insira uma descrição"
+            obs="A descrição deve conter até 200 caracteres"
+            max={200}
           />
           <button className={`f-row ctr ${styles.submit}`} type="submit">
             Salvar
