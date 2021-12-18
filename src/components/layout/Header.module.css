@@ -1,0 +1,27 @@
+.container {
+  width: 100%;
+  position: relative;
+  margin-top: 17px;
+  margin-bottom: 27px;
+  user-select: none;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.back {
+  position: absolute;
+  top: -6px;
+  left: 12px;
+  width: 32px;
+  height: 32px;
+}
+
+.back > svg {
+  fill: #fff;
+}
