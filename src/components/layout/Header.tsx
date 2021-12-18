@@ -40,7 +40,7 @@ function Header({ displayBg, handleClose }: IHeaderProps) {
 
   return (
     <header className={`f-col ctr ${styles.container}`}>
-      <div className="f-row">
+      <div className="f-row ctr">
         {closeButton}
         <Link href="/">
           <a>

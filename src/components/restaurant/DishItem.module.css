@@ -30,3 +30,9 @@
   font: normal normal bold 16px/10px Poppins;
   white-space: nowrap;
 }
+
+@media (min-width: 1024px) {
+  .container {
+    min-width: 25vw;
+  }
+}

@@ -13,3 +13,9 @@
 .container > ul {
   margin: 20px 0;
 }
+
+@media (min-width: 1024px) {
+  .container > h2 {
+    font-size: 42px;
+  }
+}
