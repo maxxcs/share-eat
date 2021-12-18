@@ -1,4 +1,11 @@
-import { memo, useCallback, useContext, useEffect } from "react";
+import {
+  memo,
+  useCallback,
+  useContext,
+  useEffect,
+  MouseEvent,
+  useRef,
+} from "react";
 import styles from "./Modal.module.css";
 import Header from "../layout/Header";
 import AppContext from "../Context";
@@ -7,10 +14,18 @@ import Textarea from "./Textarea";
 
 function Modal() {
   const { state, setState } = useContext(AppContext);
+  const backdropRef = useRef<HTMLDivElement>(null);
 
   const handleClose = useCallback(() => {
     setState({ ...state, diplayModal: false });
   }, [setState, state]);
+
+  const handleBackdropClick = useCallback(
+    (evt: MouseEvent) => {
+      if (backdropRef.current?.isSameNode(evt.target as Node)) handleClose();
+    },
+    [handleClose]
+  );
 
   useEffect(() => {
     if (process.browser) {
@@ -20,13 +35,22 @@ function Modal() {
   }, [state.diplayModal]);
 
   return state.diplayModal ? (
-    <div className={`f-col ctr ${styles.backdrop}`}>
+    <div
+      className={`f-col ${styles.backdrop}`}
+      onClick={handleBackdropClick}
+      ref={backdropRef}
+    >
       <form className={`f-col ctr ${styles.modal}`}>
         <Header displayBg={false} handleClose={handleClose} />
         <div className="f-col">
           <h2>{state.actualPlace?.name}</h2>
-          <Input name="Nome do prato" placeholder="Prato" />
-          <Input name="Valor" placeholder="0,00" />
+          <Input type="text" name="Nome do prato" placeholder="Prato" />
+          <Input
+            type="number"
+            name="Valor"
+            placeholder="0,00"
+            wrapper={{ text: "R$", style: { width: "111px" } }}
+          />
           <Textarea
             name="Descrição do prato"
             placeholder="Insira uma descrição"
