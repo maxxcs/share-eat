@@ -3,12 +3,15 @@ import { fetchRestaurantById } from "../../utils/fetch";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { ParsedUrlQuery } from "querystring";
 import type { IRestaurant } from "../../utils/types";
+import PageNotFound from "../404";
 
 interface IRestaurantProps {
   restaurant: IRestaurant;
 }
 
 function Restaurant({ restaurant }: IRestaurantProps) {
+  if (!restaurant) return PageNotFound;
+
   return (
     <>
       <Head>
