@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { fetchRestaurants } from "../utils/fetch";
+import PlacesList from "../components/home/PlacesList";
 import type { GetServerSideProps } from "next";
 import type { IRestaurant } from "../utils/types";
 
@@ -14,6 +15,7 @@ function Home(props: IHomeProps) {
         <title>Home | Share Eat</title>
       </Head>
       <main className="f-col ctr">
+        <PlacesList places={props.restaurants} />
       </main>
     </>
   );

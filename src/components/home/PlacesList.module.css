@@ -1,0 +1,15 @@
+.container > h2 {
+  margin-bottom: 18px;
+  font: normal normal bold 36px/40px Poppins;
+  letter-spacing: 0.36px;
+  color: #f3aa00;
+}
+
+.container > p {
+  font: normal normal 300 16px/10px Nunito Sans;
+  color: #ffffff;
+}
+
+.container > ul {
+  margin: 20px 0;
+}
