@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { fetchRestaurantById } from "../../utils/fetch";
+import DishesList from "../../components/restaurant/DishesList";
+import ModalHandler from "../../components/modal/ModalHandler";
 import type { GetStaticPaths, GetStaticProps } from "next";
 import type { ParsedUrlQuery } from "querystring";
 import type { IRestaurant } from "../../utils/types";
@@ -18,7 +20,9 @@ function Restaurant({ restaurant }: IRestaurantProps) {
         <title>{restaurant?.name} | Share Eat</title>
       </Head>
       <main className="f-col ctr">
+        <DishesList name={restaurant?.name} dishes={restaurant?.menuItems} />
       </main>
+      <ModalHandler />
     </>
   );
 }

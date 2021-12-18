@@ -1,0 +1,13 @@
+.handler {
+  position: fixed;
+  right: 24px;
+  bottom: 30px;
+  width: 64px;
+  height: 64px;
+  font-size: 42px;
+  color: #222;
+  background-color: #f3aa00;
+  border-radius: 100px;
+  user-select: none;
+  z-index: 10;
+}
