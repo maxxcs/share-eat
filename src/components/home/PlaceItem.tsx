@@ -1,6 +1,7 @@
-import { memo } from "react";
+import { memo, useCallback, useContext } from "react";
 import Link from "next/link";
 import styles from "./PlaceItem.module.css";
+import AppContext from "../Context";
 
 interface IPlaceItemProps {
   id: number;
@@ -9,6 +10,12 @@ interface IPlaceItemProps {
 }
 
 function PlaceItem({ id, name, dishes }: IPlaceItemProps) {
+  const { setState } = useContext(AppContext);
+
+  const handleOpenModal = useCallback(() => {
+    setState({ diplayModal: true, actualPlace: { id, name } });
+  }, [id, name, setState]);
+
   return (
     <li className={`f-row ctr ${styles.container}`}>
       <Link href={`/restaurant/${id}`}>
@@ -17,7 +24,11 @@ function PlaceItem({ id, name, dishes }: IPlaceItemProps) {
           <p>{dishes} pratos</p>
         </a>
       </Link>
-      <button className={`f-row ctr ${styles.button}`} type="button">
+      <button
+        className={`f-row ctr ${styles.button}`}
+        type="button"
+        onClick={handleOpenModal}
+      >
         +
       </button>
     </li>
