@@ -5,7 +5,7 @@ export function useBackButton() {
   const router = useRouter();
 
   const handleBack = useCallback(() => {
-    router.back();
+    router.push("/");
   }, [router]);
 
   return router.pathname !== "/" ? handleBack : null;
