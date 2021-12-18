@@ -1,0 +1,20 @@
+.container > span {
+  font: normal normal bold 14px/19px Nunito Sans;
+  color: #ffffffde;
+}
+
+.container > textarea {
+  width: 311px;
+  height: 136px;
+  padding: 8px 17px;
+  font: normal normal normal 16px/22px Nunito Sans;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #dededf;
+  border-radius: 4px;
+  outline: none;
+}
+
+.obs {
+  font: normal normal normal 14px/19px Nunito Sans;
+  color: #ffffffde;
+}

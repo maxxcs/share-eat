@@ -1,0 +1,15 @@
+.container > span {
+  font: normal normal bold 14px/19px Nunito Sans;
+  color: #ffffffde;
+}
+
+.container > input {
+  width: 311px;
+  height: 38px;
+  padding: 8px 17px;
+  font: normal normal normal 16px/22px Nunito Sans;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #dededf;
+  border-radius: 4px;
+  outline: none;
+}
