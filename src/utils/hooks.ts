@@ -1,5 +1,15 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { useRouter } from "next/router";
+
+export function useBackButton() {
+  const router = useRouter();
+
+  const handleBack = useCallback(() => {
+    router.back();
+  }, [router]);
+
+  return router.pathname !== "/" ? handleBack : null;
+}
 
 export function useChangeBackgroundColor() {
   const router = useRouter();
