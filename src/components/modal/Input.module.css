@@ -8,13 +8,29 @@
   color: #ffffffde;
 }
 
-.container > input {
+.container > div {
   width: 311px;
   height: 38px;
   padding: 8px 17px;
-  font: normal normal normal 16px/22px Nunito Sans;
   background: #ffffff 0% 0% no-repeat padding-box;
   border: 1px solid #dededf;
   border-radius: 4px;
+}
+
+.container > div > input {
+  width: 100%;
+  height: 100%;
+  font: normal normal normal 16px/22px Nunito Sans;
   outline: none;
+  border: none;
+}
+
+.container > div > input::-webkit-outer-spin-button,
+.container > div > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container > div > input[type="number"] {
+  -moz-appearance: textfield;
 }
